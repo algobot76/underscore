@@ -507,6 +507,7 @@
   // the arguments object. Passing **n** will return all the values in
   // the array, excluding the last N.
   _.initial = function(array, n, guard) {
+    // (AB76) `Math.max` guarantees that the index passed into `slice` is always non-negative.
     return slice.call(array, 0, Math.max(0, array.length - (n == null || guard ? 1 : n)));
   };
 
