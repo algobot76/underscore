@@ -497,8 +497,9 @@
   // values in the array. Aliased as `head` and `take`. The **guard** check
   // allows it to work with `_.map`.
   _.first = _.head = _.take = function(array, n, guard) {
+    // (AB76) `array == null` is true if array is `undefined` or `null`
     if (array == null || array.length < 1) return n == null ? void 0 : [];
-    if (n == null || guard) return array[0];
+    if (n == null || guard) return array[0]; // (AB76) if `n` is not specified
     return _.initial(array, array.length - n);
   };
 
