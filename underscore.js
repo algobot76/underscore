@@ -142,6 +142,10 @@
     return result;
   };
 
+  // (AB76) `shallowProperty` check if `obj` has a specified property `key`.If
+  // so, returns the corresponding value, otherwise return `undefined`. Note
+  // that `shallowProperty only considers outermost properties, not nested
+  // properties.
   var shallowProperty = function(key) {
     return function(obj) {
       return obj == null ? void 0 : obj[key];
