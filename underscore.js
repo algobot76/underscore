@@ -169,6 +169,8 @@
   // should be iterated as an array or as an object.
   // Related: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
   // Avoids a very nasty iOS 8 JIT bug on ARM-64. #2094
+  // (AB76) To know why `MAX_ARRAY_INDEX` is defined as 2^53 - 1, check this out
+  // https://github.com/jashkenas/underscore/issues/2313
   var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
   var getLength = shallowProperty('length');
   var isArrayLike = function(collection) {
